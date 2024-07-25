@@ -3,6 +3,7 @@
 #%%
 # Task 1. 素数リストprime_numbersの作成と出力
 
+# 素数リストの作成
 prime_numbers = []
 i = 2
 while len(prime_numbers) < 100:
@@ -13,12 +14,23 @@ while len(prime_numbers) < 100:
         prime_numbers.append(i)
     i += 1
 
+# %%
 # prime_numbersの要素を出力
 for i in range(len(prime_numbers)):
     if i % 10 == 9:
         print(prime_numbers[i])
     else:
         print(prime_numbers[i],end=' ')
+
+# %%
+# enumerateを使う方法 - 学生さんに教えてもらいました
+# こちらのほうがPythonicで格好いいですね
+for i,v in enumerate(prime_numbers):
+    if i % 10 == 9:
+        print(v)
+    else:
+        print(v,end=' ')
+
 # %%
 # Task 2. prime_numbersの要素を逆順に出力
 
@@ -42,7 +54,7 @@ for i in range(len(even)):
         print(even[i],end=' ')
 
 # %%
-# Task 4. prime_numbersの要素のうち素数番目のものを出力
+# Task 4. prime_numbersの要素のうちスーパー素数を出力
 
 j = 0
 for i in range(len(prime_numbers)):
@@ -52,3 +64,13 @@ for i in range(len(prime_numbers)):
             print(prime_numbers[i])
         else:
             print(prime_numbers[i],end=' ')
+
+# %%
+# 先にスーパー素数のリストを作るのでも良いと思います
+# ここでは少し高度な内包表記を使ってみました
+super_prime = [p for i,p in enumerate(prime_numbers) if i+1 in prime_numbers]
+for i,p in enumerate(super_prime):
+    if i % 5 == 4:
+        print(p)
+    else:
+        print(p,end=' ')
