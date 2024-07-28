@@ -74,3 +74,16 @@ for i,p in enumerate(super_prime):
         print(p)
     else:
         print(p,end=' ')
+
+# %%
+# 学生さんが考えたエレガントな別回答です
+# whileの条件式にprime_numbers[i]<100を持ってくるのがとっても賢いです
+
+i = 0
+while prime_numbers[i] < 100:
+    if i % 5 == 4:
+        print(prime_numbers[prime_numbers[i]-1])
+    else:
+        print(prime_numbers[prime_numbers[i]-1],end=' ')
+    i += 1
+# %%
